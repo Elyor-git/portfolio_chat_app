@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_chat_app/core/di/injection/injection.dart';
+import 'package:portfolio_chat_app/core/theme/app_theme.dart';
 
 void main() async {
   await configureDependencies();
@@ -11,6 +12,11 @@ class ChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router();
+    return MaterialApp.router(
+      theme: AppTheme.theme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+
+    );
   }
 }
