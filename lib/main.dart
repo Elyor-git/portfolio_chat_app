@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_chat_app/core/di/injection/injection.dart';
+import 'package:portfolio_chat_app/core/router/go_router.dart';
 import 'package:portfolio_chat_app/core/theme/app_theme.dart';
 
 void main() async {
@@ -13,10 +14,11 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-
+      themeMode: ThemeMode.light,
+      routerConfig: getIt<GoRouterConfig>().goRouterConfig,
     );
   }
 }

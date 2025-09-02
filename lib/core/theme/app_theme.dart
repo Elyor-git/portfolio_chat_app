@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_chat_app/core/theme/app_color.dart';
 
+/// Build context extension for color
 extension ColorSchemeExtension on BuildContext {
   ColorScheme get colors => Theme.of(this).colorScheme;
 }
 
 extension ColorExtension on ColorScheme {
   bool get isLight => Brightness.light == brightness;
+
+  Color get neutral300 => AppColor.neutral300;
+
+  Color get neutral900 => AppColor.neutral900;
 }
 
 final class AppTheme {
